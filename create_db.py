@@ -11,6 +11,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS COSTS
                 cost_date date,
                 user_id INTEGER,
                 FOREIGN KEY (user_id) REFERENCES USERS(id));''')   # CREATE COSTS Table
+
 if not list(cursor.execute('''SELECT * FROM USERS WHERE Username='Andrew' ''')):
     cursor.execute('''INSERT INTO USERS(Username) VALUES ('Andrew')''')
 connection.commit()
